@@ -6,9 +6,22 @@ Project to instruct to install and configure the first step of wsl2 using ubuntu
 sudo apt install zsh
 ```
 
-- Installing zsh themes:
+- Installing zsh themes oh my sh:
 ```bash
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
+
+- Install Zinit to be able to install zsh plugins 
+```bash
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-
+continuum/zinit/HEAD/scripts/install.sh)"
+```
+
+- Paste in the end of .zshrc the next plugins
+```bash
+zinit light zdharma/fast-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
 ```
 
 - install docker:
