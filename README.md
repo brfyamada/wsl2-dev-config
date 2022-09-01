@@ -6,9 +6,9 @@ Project to instruct to install and configure the first step of wsl2 using ubuntu
 sudo apt install zsh
 
 - Installing zsh themes:
-
+```bash
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-
+```
 
 - install docker:
 
