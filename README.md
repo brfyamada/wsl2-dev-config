@@ -33,6 +33,16 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
 sudo apt install docker-ce
+```
+
+-If you are using Ubuntu 22.04 LTS, when you install Docker in WSL2 with the latest Ubuntu 22.04 LTS, you will notice that Docker will not start after running sudo service docker start. You will receive errors when starting a container, and sudo service docker status will tell you Docker is not running.
+
+```bash
+sudo update-alternatives --config iptables
+Enter 1 to select iptables-legacy
+``` 
+- Start and execute
+```bash
 sudo service docker start
 sudo docker run hello-world
 ```
