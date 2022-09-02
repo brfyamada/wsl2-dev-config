@@ -58,10 +58,25 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
+Install Kubectl
+```bash
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+windowsUser=$1
+
+mkdir -p ~/.kube
+ln -sf "/mnt/c/users/$windowsUser/.kube/config" ~/.kube/config
+
+kubectl version
+```
+
 Install K3D
 - Run commands:
 ```bash
-$ sudo wget https://github.com/rancher/k3d/releases/download/v3.0.0/k3d-linux-amd64 -O /usr/local/bin/k3d
-$ sudo chmod +x /usr/local/bin/k3d
+wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 ```
+
+
 
