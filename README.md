@@ -43,6 +43,7 @@ Enter 1 to select iptables-legacy
 ``` 
 - Start and execute
 ```bash
+sudo usermod -aG docker $USER
 sudo service docker start
 sudo docker run hello-world
 ```
