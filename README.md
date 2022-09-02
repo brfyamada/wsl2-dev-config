@@ -51,11 +51,6 @@ sudo service docker start
 sudo docker run hello-world
 ```
 
-- If using zsh export variable to .zshrc
-```bash
-export DOCKER_HOST=unix:///var/run/docker.sock
-```
-
 - Install docker compose 
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
