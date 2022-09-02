@@ -57,3 +57,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
+
+Install K3D
+- Run commands:
+```bash
+$ sudo wget https://github.com/rancher/k3d/releases/download/v3.0.0/k3d-linux-amd64 -O /usr/local/bin/k3d
+$ sudo chmod +x /usr/local/bin/k3d
+```
+
