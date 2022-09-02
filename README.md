@@ -23,6 +23,9 @@ zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 ```
+- close and open terminal 
+
+Docker Instalation
 
 - install docker:
 ```bash
