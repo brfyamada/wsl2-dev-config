@@ -13,8 +13,7 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 
 - Install Zinit to be able to install zsh plugins 
 ```bash
-bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-
-continuum/zinit/HEAD/scripts/install.sh)"
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 ```
 
 - Paste in the end of .zshrc the next plugins
