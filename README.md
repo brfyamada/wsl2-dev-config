@@ -58,17 +58,39 @@ docker-compose --version
 ```
 
 Install Kubectl
+- Download the latest release with the command:
 ```bash
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+```
 
-windowsUser=$1
+- Download the kubectl checksum file
+```bash
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+```
 
-mkdir -p ~/.kube
-ln -sf "/mnt/c/users/$windowsUser/.kube/config" ~/.kube/config
+- Validate the kubectl binary against the checksum file:
 
-kubectl version
+```bash
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+```
+
+-Install kubectl:
+```bash
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+```
+
+- Test to ensure the version you installed is up-to-date:
+```bash
+kubectl version --client
+```
+
+
+```bash
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+kubectl version --client
 ```
 
 Install K3D
