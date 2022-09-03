@@ -110,5 +110,23 @@ kubectl port-forward svc/argocd-server -n argocd 8081:443
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
 
+## configuring ssh key in linux that you can use it with github and outhers:
+- generate the key
+```bash
+ssh-keygen -t ed25519 -C "some comment"
+```
+
+- to check the public key content
+```bash
+cat /home/{put here your user}/.ssh/id_ed25519.pub
+```
+
+- to check the private key content
+```bash
+/home/{put here your user}/.ssh/id_ed25519
+```
+
+
+
 
 
