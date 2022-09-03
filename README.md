@@ -1,5 +1,5 @@
 # wsl2-dev-config
-Project to instruct to install and configure the first step of wsl2 using ubuntu
+## Project to instruct to install and configure the first step of wsl2 using ubuntu
 
 - Installing zsh: 
 ```bash
@@ -24,7 +24,7 @@ zinit light zsh-users/zsh-completions
 ```
 - close and open terminal 
 
-Docker Instalation
+## Docker Instalation
 
 - install docker:
 ```bash
@@ -57,7 +57,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-Install Kubectl
+## Install Kubectl
 - Download the latest release with the command:
 ```bash
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -83,11 +83,21 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```bash
 kubectl version --client
 ```
-Install K3D
+## Install K3D
 - Run commands:
 ```bash
 wget -q -O - https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 ```
 
+## Installing ArgoCD in a K3d cluster
+```bash
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+- check argo process:
+```bash
+kubectl get all -n argocd
+```
 
 
