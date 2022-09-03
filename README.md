@@ -109,6 +109,10 @@ kubectl port-forward svc/argocd-server -n argocd 8081:443
 ```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
+- Importing a local docker image to the k3d cluster:
+```bash
+k3d image import {imageName}:{version} -c {clusterName}
+```
 
 ## configuring ssh key in linux that you can use it with github and outhers:
 - generate the key
@@ -125,6 +129,7 @@ cat /home/{put here your user}/.ssh/id_ed25519.pub
 ```bash
 /home/{put here your user}/.ssh/id_ed25519
 ```
+
 
 
 
