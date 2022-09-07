@@ -130,7 +130,24 @@ cat /home/{put here your user}/.ssh/id_ed25519.pub
 /home/{put here your user}/.ssh/id_ed25519
 ```
 
+## Installing Go language (change to the last version if necessary):
+```bash
+wget https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
+sudo tar -xvf go1.14.2.linux-amd64.tar.gz
+sudo mv go /usr/local
+```
 
+- Paste the next lines to the .bashrc or .zshrc if it's your case:
+```bash
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+```
+
+- testing the go instalation, after close and open terminal, type:
+```bash
+go version
+```
 
 
 
